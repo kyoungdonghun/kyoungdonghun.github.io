@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "경동훈"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bio-photo.jpg"
   bio              : "차근차근 계단을 오르듯 해보려합니다."
   location         : "Korea, Daegu"
   email            :
