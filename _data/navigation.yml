@@ -4,6 +4,8 @@ main:
     url: /JAVA/
   - title: "BLOG"
     url: /BLOG/
+  - title: "MySql"
+    url: /MySql/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
