@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BLOG 카테고리 테스트  - 계단을 오르는 백엔드 개발자</title>
-<meta name="description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
+<!-- begin _includes/seo.html --><title>JAVA, 정수를 입력받을 때 발생할 수 있는 예외 처리하기. - 계단을 오르는 백엔드 개발자</title>
+<meta name="description" content="public class basic062 {">
 
 
   <meta name="author" content="경동훈">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="계단을 오르는 백엔드 개발자">
-<meta property="og:title" content="BLOG 카테고리 테스트">
-<meta property="og:url" content="http://localhost:4000/blog/BLOG001/">
+<meta property="og:title" content="JAVA, 정수를 입력받을 때 발생할 수 있는 예외 처리하기.">
+<meta property="og:url" content="http://localhost:4000/java/JAVA025/">
 
 
-  <meta property="og:description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-05-03T00:00:00+09:00">
+  <meta property="og:description" content="public class basic062 {">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-05-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/blog/BLOG001/">
+
+<link rel="canonical" href="http://localhost:4000/java/JAVA025/">
 
 
 
@@ -264,16 +264,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BLOG 카테고리 테스트">
-    <meta itemprop="description" content="자바 카테고리 테스트 입니다.카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-    <meta itemprop="datePublished" content="2023-05-03T00:00:00+09:00">
+    <meta itemprop="headline" content="JAVA, 정수를 입력받을 때 발생할 수 있는 예외 처리하기.">
+    <meta itemprop="description" content="public class basic062 {">
+    <meta itemprop="datePublished" content="2023-05-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/blog/BLOG001/" class="u-url" itemprop="url">BLOG 카테고리 테스트
+            <a href="http://localhost:4000/java/JAVA025/" class="u-url" itemprop="url">JAVA, 정수를 입력받을 때 발생할 수 있는 예외 처리하기.
 </a>
           </h1>
           
@@ -302,9 +302,75 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>자바 카테고리 테스트 입니다.
-카테고리는 자바, 테그는 “처음”, “테스트” 입니다.</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class basic062 {
+</code></pre></div></div>
 
+<blockquote>
+  <p>문자열을 기본 타입으로 변환할 때는 랩퍼(Wrapper)클래스를 이용한다. “34”와 같은 정수형 문자열을 정수로 변환하려면 Integer.parseInt()를, “34.5”와 같은 실수형 문자열을 실수로 변환하려면 Double.parseDouble()을 사용한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public static void main(String []args) {
+		String sNum="123";
+		String nNum="h";
+		try {
+			int a = Integer.parseInt(sNum); 
+</code></pre></div></div>
+
+<blockquote>
+  <p>정수타입 문자열을 정수로 변활할떄 사용한다</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			System.out.println(a);
+		}
+		catch(NumberFormatException ee) { 
+</code></pre></div></div>
+
+<blockquote>
+  <p>이때 잘못된 뱐환을 사용하면 NumberFormatException이 발생한다. 예외가 발생할 수 있는 문장을 try에 넣고, 예외가 발생하면 catch(){}에서 처리하게 된다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			System.out.println("int 사용한거 맞나요?");
+</code></pre></div></div>
+
+<blockquote>
+  <p>예외는 안전하게 끝내는것이 목적이므로 간단하게 작성하자.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			System.out.println(ee.getMessage());
+</code></pre></div></div>
+
+<blockquote>
+  <p>ee의 메세지를 반환하는 .getMessage() 메서드.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		}
+		catch(Exception ee) { 
+</code></pre></div></div>
+
+<blockquote>
+  <p>첫 catch, NumberFormatException에서 예외가 잡히지않으면 EXception에서 처리한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			System.out.println("다시 확인");
+</code></pre></div></div>
+
+<blockquote>
+  <p>NumberFormatException와 Exception 의 순서가 바뀌면 Exception에서 예외를 다 잡아버리므로, Unreachable Catch Block Error 가 발생하게 된다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		}
+		finally {
+			System.out.println("좀 돌아가나요?");
+		}		
+	}
+}
+</code></pre></div></div>
+
+<p>//결과</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123
+좀 돌아가나요?
+</code></pre></div></div>
 
         
       </section>
@@ -321,9 +387,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#%EC%B2%98%EC%9D%8C" class="page__taxonomy-item p-category" rel="tag">처음</a><span class="sep">, </span>
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">테스트</a>
+      <a href="/tags/#pratice" class="page__taxonomy-item p-category" rel="tag">Pratice</a>
     
     </span>
   </p>
@@ -340,7 +406,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">BLOG</a>
+      <a href="/categories/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a>
     
     </span>
   </p>
@@ -348,7 +414,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-03T00:00:00+09:00">May 3, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-21T00:00:00+09:00">May 21, 2023</time></p>
 
       </footer>
 
@@ -357,21 +423,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=BLOG+%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC+%ED%85%8C%EC%8A%A4%ED%8A%B8+%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=JAVA%2C+%EC%A0%95%EC%88%98%EB%A5%BC+%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%84+%EB%95%8C+%EB%B0%9C%EC%83%9D%ED%95%A0+%EC%88%98+%EC%9E%88%EB%8A%94+%EC%98%88%EC%99%B8+%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0.%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA025%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA025%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA025%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
+      <a href="/java/JAVA024/" class="pagination--pager" title="JAVA, string과 char를 이용하여 10진수를 2진수로 변환하기
+">이전</a>
     
     
-      <a href="/java/JAVA001/" class="pagination--pager" title="JAVA 카테고리 테스트
+      <a href="/java/JAVA026/" class="pagination--pager" title="JAVA, 정수를 입력받을 때 발생할 수 있는 예외 처리하기.
 ">다음</a>
     
   </nav>

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BLOG 카테고리 테스트  - 계단을 오르는 백엔드 개발자</title>
-<meta name="description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
+<!-- begin _includes/seo.html --><title>JAVA, String Buffer로 문자열 수정, 변경, 추가하기. - 계단을 오르는 백엔드 개발자</title>
+<meta name="description" content="public class basic069 { 	public static void main(String[] args) {">
 
 
   <meta name="author" content="경동훈">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="계단을 오르는 백엔드 개발자">
-<meta property="og:title" content="BLOG 카테고리 테스트">
-<meta property="og:url" content="http://localhost:4000/blog/BLOG001/">
+<meta property="og:title" content="JAVA, String Buffer로 문자열 수정, 변경, 추가하기.">
+<meta property="og:url" content="http://localhost:4000/java/JAVA032/">
 
 
-  <meta property="og:description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-05-03T00:00:00+09:00">
+  <meta property="og:description" content="public class basic069 { 	public static void main(String[] args) {">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-05-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/blog/BLOG001/">
+
+<link rel="canonical" href="http://localhost:4000/java/JAVA032/">
 
 
 
@@ -264,16 +264,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BLOG 카테고리 테스트">
-    <meta itemprop="description" content="자바 카테고리 테스트 입니다.카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-    <meta itemprop="datePublished" content="2023-05-03T00:00:00+09:00">
+    <meta itemprop="headline" content="JAVA, String Buffer로 문자열 수정, 변경, 추가하기.">
+    <meta itemprop="description" content="public class basic069 {	public static void main(String[] args) {">
+    <meta itemprop="datePublished" content="2023-05-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/blog/BLOG001/" class="u-url" itemprop="url">BLOG 카테고리 테스트
+            <a href="http://localhost:4000/java/JAVA032/" class="u-url" itemprop="url">JAVA, String Buffer로 문자열 수정, 변경, 추가하기.
 </a>
           </h1>
           
@@ -302,9 +302,98 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>자바 카테고리 테스트 입니다.
-카테고리는 자바, 테그는 “처음”, “테스트” 입니다.</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class basic069 {
+	public static void main(String[] args) {
+</code></pre></div></div>
 
+<blockquote>
+  <p>StringBuffer 생성</p>
+  <blockquote>
+    <p>문자열을 저장 또는 처리하는 String은 참조 타입이지만 성격을 변경해서(오버라이딩)기본타입과 동일한 CBV(값 복사)를 한다. 문자열을 연산한 후 대입연산자로 저장해야 변경한다.</p>
+    <blockquote>
+      <p>바꾼 문자열을 다시 대입하지않으면 원래문자열이 되는 특징이 이뮤터블이다. 내용이 변경되면 새로운 주소를 갖는다.</p>
+      <blockquote>
+        <p>StringBuffer는 저장하는 내영이 변경이 되어도 처음 주소가 변경되지않는다.</p>
+        <blockquote>
+          <p>바꾼 문자열을 다시 대입하지않아도 원래 문자열이 변하는 것을 뮤터블 이라고 한다.(중요) [주소가 변경되지않고, 바뀐 문자열이 대입하지않아도 바뀌는것.]</p>
+          <blockquote>
+            <p>StringBuffer로 문자열을 연산한다음 최종으로 toString()을 통하여 String으로 변환하여 사용한다.
+			StringBuffer sb1=new StringBuffer();</p>
+            <blockquote>
+              <p>계속 붙이는 함수 mutable</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			sb1.append("안녕하세요 ") 
+</code></pre></div></div>
+
+<blockquote>
+  <p>.append는 컨케스트레이션(+ ,concat)역할을 한다. 그러나 StingBuffer는 뮤터블하므로 다시 대입하지않아도 된다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				.append("또 만나요. ")
+				.append("모두를 사랑해요. 기다려봐. ");
+				System.out.println(sb1.toString()+sb1.hashCode()); &gt; 2 replace
+
+				sb1.replace(0,2,"나 보기가 역겨워");
+</code></pre></div></div>
+
+<blockquote>
+  <p>replace(0,2,”나보기가 역겨워”)는 0번째부터 (2-1)번째까지의 문자열 안녕을 제거하고 넣는다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				System.out.println(sb1.toString()+sb1.hashCode());
+</code></pre></div></div>
+
+<blockquote>
+  <p>3 reverse</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				sb1.reverse();
+				System.out.println(sb1.toString());
+</code></pre></div></div>
+
+<blockquote>
+  <p>4 delete</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				sb1.delete(10,15);
+				System.out.println(sb1.toString());
+</code></pre></div></div>
+
+<blockquote>
+  <p>5 cal by reference, shallow copy</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				replaces(sb1);
+				System.out.println(sb1.toString());
+	}
+				public static void replaces(StringBuffer sb) {
+				sb.reverse();
+</code></pre></div></div>
+
+<blockquote>
+  <p>0부터2까지를 GoGo로</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				sb.replace(0,3,"GoGo");
+	}
+}
+</code></pre></div></div>
+
+<p>//결과</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>안녕하세요 또 만나요. 모두를 사랑해요. 기다려봐. 2109957412
+나 보기가 역겨워하세요 또 만나요. 모두를 사랑해요. 기다려봐. 2109957412
+.봐려다기 .요해랑사 를두모 .요나만 또 요세하워겨역 가기보 나
+.봐려다기 .요해모 .요나만 또 요세하워겨역 가기보 나
+GoGo기가 역겨워하세요 또 만나요. 모해요. 기다려봐. 
+</code></pre></div></div>
 
         
       </section>
@@ -321,9 +410,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#%EC%B2%98%EC%9D%8C" class="page__taxonomy-item p-category" rel="tag">처음</a><span class="sep">, </span>
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">테스트</a>
+      <a href="/tags/#pratice" class="page__taxonomy-item p-category" rel="tag">Pratice</a>
     
     </span>
   </p>
@@ -340,7 +429,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">BLOG</a>
+      <a href="/categories/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a>
     
     </span>
   </p>
@@ -348,7 +437,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-03T00:00:00+09:00">May 3, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-21T00:00:00+09:00">May 21, 2023</time></p>
 
       </footer>
 
@@ -357,21 +446,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=BLOG+%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC+%ED%85%8C%EC%8A%A4%ED%8A%B8+%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=JAVA%2C+String+Buffer%EB%A1%9C+%EB%AC%B8%EC%9E%90%EC%97%B4+%EC%88%98%EC%A0%95%2C+%EB%B3%80%EA%B2%BD%2C+%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA032%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA032%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA032%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
+      <a href="/java/JAVA031/" class="pagination--pager" title="JAVA, 리플렉션(Reflection)을 이용하여 클래스 정보 출력하기
+">이전</a>
     
     
-      <a href="/java/JAVA001/" class="pagination--pager" title="JAVA 카테고리 테스트
+      <a href="/java/JAVA033/" class="pagination--pager" title="JAVA, StringBuilder로 문자열 수정, 변경, 추가하기.
 ">다음</a>
     
   </nav>
@@ -483,48 +573,6 @@ import java.util.Properties;
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/java/JAVA032/" rel="permalink">JAVA, String Buffer로 문자열 수정, 변경, 추가하기.
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">public class basic069 {
-	public static void main(String[] args) {
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/java/JAVA031/" rel="permalink">JAVA, 리플렉션(Reflection)을 이용하여 클래스 정보 출력하기
 </a>
       
@@ -552,6 +600,53 @@ import java.util.Properties;
 
     <p class="archive__item-excerpt" itemprop="description">import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/java/JAVA030/" rel="permalink">JAVA, String(문자열)가공하기.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">public static void main(String []args) {
+		String text="Hello Java4 Android";
+		String com="HEllo java4 Android";
+
+
+
+  //String은 문자열 가공을 위한 메서드를 많이 제공한다.
 
 </p>
   </article>

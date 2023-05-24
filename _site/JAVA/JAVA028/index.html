@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BLOG 카테고리 테스트  - 계단을 오르는 백엔드 개발자</title>
-<meta name="description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
+<!-- begin _includes/seo.html --><title>JAVA, Class를 이용하여 메서드와 생성자 살펴보기. - 계단을 오르는 백엔드 개발자</title>
+<meta name="description" content="import java.lang.reflect.Constructor; import java.lang.reflect.Method;">
 
 
   <meta name="author" content="경동훈">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="계단을 오르는 백엔드 개발자">
-<meta property="og:title" content="BLOG 카테고리 테스트">
-<meta property="og:url" content="http://localhost:4000/blog/BLOG001/">
+<meta property="og:title" content="JAVA, Class를 이용하여 메서드와 생성자 살펴보기.">
+<meta property="og:url" content="http://localhost:4000/java/JAVA028/">
 
 
-  <meta property="og:description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-05-03T00:00:00+09:00">
+  <meta property="og:description" content="import java.lang.reflect.Constructor; import java.lang.reflect.Method;">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-05-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/blog/BLOG001/">
+
+<link rel="canonical" href="http://localhost:4000/java/JAVA028/">
 
 
 
@@ -264,16 +264,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BLOG 카테고리 테스트">
-    <meta itemprop="description" content="자바 카테고리 테스트 입니다.카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-    <meta itemprop="datePublished" content="2023-05-03T00:00:00+09:00">
+    <meta itemprop="headline" content="JAVA, Class를 이용하여 메서드와 생성자 살펴보기.">
+    <meta itemprop="description" content="import java.lang.reflect.Constructor;import java.lang.reflect.Method;">
+    <meta itemprop="datePublished" content="2023-05-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/blog/BLOG001/" class="u-url" itemprop="url">BLOG 카테고리 테스트
+            <a href="http://localhost:4000/java/JAVA028/" class="u-url" itemprop="url">JAVA, Class를 이용하여 메서드와 생성자 살펴보기.
 </a>
           </h1>
           
@@ -302,9 +302,78 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>자바 카테고리 테스트 입니다.
-카테고리는 자바, 테그는 “처음”, “테스트” 입니다.</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
+public class basic065 {public static void main(String[]args) {
+  Object obj1 = new Object();
+  Class classes = obj1.getClass(); 
+</code></pre></div></div>
+
+<blockquote>
+  <p>class 를 반환한다. class는 해당 클래스의 선언된 메서드와 생성자들을 반환하는 메서드를 제공한다.클래스에 대한 모든 정보는 java.lang.class를 이용한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>System.out.println(classes.getName()); 
+</code></pre></div></div>
+
+<blockquote>
+  <p>클래스 이름을 리턴한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>System.out.println("------constructor");
+Constructor []constructor = classes.getDeclaredConstructors(); 
+</code></pre></div></div>
+
+<blockquote>
+  <p>선언한 생성자를 제공. 생성자에 대한 모든 정보는 java.lang.reflect.Constructor를 이용한다. 모든생성자를 리턴하므로 배열로 받는다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  for(Constructor con: constructor) { 
+</code></pre></div></div>
+
+<blockquote>
+  <p>향상된 for(for each)를 이용하여 생성자의 이름을 출력한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    System.out.println(con.getName());
+  }
+System.out.println("-----Method");
+Method []method	= classes.getMethods();
+</code></pre></div></div>
+
+<blockquote>
+  <p>선언된 메서드를 제공. 클래스의 모든 메서드를 리턴한다. 모든걸 뱉어내므로 배열로 받는다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  for(Method me : method) { 
+</code></pre></div></div>
+
+<blockquote>
+  <p>향상된 for(for each)를 이용하여 매서드의 이름을 출력한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    System.out.println(me.getName());
+  }	
+}   }
+</code></pre></div></div>
+
+<p>//결과</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java.lang.Object
+------constructor
+java.lang.Object
+-----Method
+wait
+wait
+wait
+equals
+toString
+hashCode
+getClass
+notify
+notifyAll
+</code></pre></div></div>
 
         
       </section>
@@ -321,9 +390,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#%EC%B2%98%EC%9D%8C" class="page__taxonomy-item p-category" rel="tag">처음</a><span class="sep">, </span>
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">테스트</a>
+      <a href="/tags/#pratice" class="page__taxonomy-item p-category" rel="tag">Pratice</a>
     
     </span>
   </p>
@@ -340,7 +409,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">BLOG</a>
+      <a href="/categories/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a>
     
     </span>
   </p>
@@ -348,7 +417,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-03T00:00:00+09:00">May 3, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-21T00:00:00+09:00">May 21, 2023</time></p>
 
       </footer>
 
@@ -357,21 +426,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=BLOG+%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC+%ED%85%8C%EC%8A%A4%ED%8A%B8+%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=JAVA%2C+Class%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC+%EB%A9%94%EC%84%9C%EB%93%9C%EC%99%80+%EC%83%9D%EC%84%B1%EC%9E%90+%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0.%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA028%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA028%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA028%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
+      <a href="/java/JAVA027/" class="pagination--pager" title="JAVA, object 이해하고 사용하기.
+">이전</a>
     
     
-      <a href="/java/JAVA001/" class="pagination--pager" title="JAVA 카테고리 테스트
+      <a href="/java/JAVA029/" class="pagination--pager" title="JAVA, String(문자열)을 이용해 도시 이름 비교하기.
 ">다음</a>
     
   </nav>

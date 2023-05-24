@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BLOG 카테고리 테스트  - 계단을 오르는 백엔드 개발자</title>
-<meta name="description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
+<!-- begin _includes/seo.html --><title>JAVA, String(문자열)가공하기. - 계단을 오르는 백엔드 개발자</title>
+<meta name="description" content="public static void main(String []args) { 		String text=&quot;Hello Java4 Android&quot;; 		String com=&quot;HEllo java4 Android&quot;;      //String은 문자열 가공을 위한 메서드를 많이 제공한다.">
 
 
   <meta name="author" content="경동훈">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="계단을 오르는 백엔드 개발자">
-<meta property="og:title" content="BLOG 카테고리 테스트">
-<meta property="og:url" content="http://localhost:4000/blog/BLOG001/">
+<meta property="og:title" content="JAVA, String(문자열)가공하기.">
+<meta property="og:url" content="http://localhost:4000/java/JAVA030/">
 
 
-  <meta property="og:description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-05-03T00:00:00+09:00">
+  <meta property="og:description" content="public static void main(String []args) { 		String text=&quot;Hello Java4 Android&quot;; 		String com=&quot;HEllo java4 Android&quot;;      //String은 문자열 가공을 위한 메서드를 많이 제공한다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-05-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/blog/BLOG001/">
+
+<link rel="canonical" href="http://localhost:4000/java/JAVA030/">
 
 
 
@@ -264,16 +264,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BLOG 카테고리 테스트">
-    <meta itemprop="description" content="자바 카테고리 테스트 입니다.카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-    <meta itemprop="datePublished" content="2023-05-03T00:00:00+09:00">
+    <meta itemprop="headline" content="JAVA, String(문자열)가공하기.">
+    <meta itemprop="description" content="public static void main(String []args) {		String text=&quot;Hello Java4 Android&quot;;		String com=&quot;HEllo java4 Android&quot;;  //String은 문자열 가공을 위한 메서드를 많이 제공한다.">
+    <meta itemprop="datePublished" content="2023-05-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/blog/BLOG001/" class="u-url" itemprop="url">BLOG 카테고리 테스트
+            <a href="http://localhost:4000/java/JAVA030/" class="u-url" itemprop="url">JAVA, String(문자열)가공하기.
 </a>
           </h1>
           
@@ -302,9 +302,148 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>자바 카테고리 테스트 입니다.
-카테고리는 자바, 테그는 “처음”, “테스트” 입니다.</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static void main(String []args) {
+		String text="Hello Java4 Android";
+		String com="HEllo java4 Android";
+</code></pre></div></div>
 
+<blockquote>
+  <p>//String은 문자열 가공을 위한 메서드를 많이 제공한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.charAt(2));
+</code></pre></div></div>
+
+<blockquote>
+  <p>자바에서 인덱스(위치)는 0부터 시작한다. ‘H’,’e’ … Hello에서 l는 2번쨰 인덱스이다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.concat("s"));
+</code></pre></div></div>
+
+<blockquote>
+  <p>concat()은 +와 같다. 문자열 s를 오른쪽에 붙인다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.contains("And")); 
+</code></pre></div></div>
+
+<blockquote>
+  <p>And 문자열을 포함하고있는지 판단한다.true</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.equals(com));
+</code></pre></div></div>
+
+<blockquote>
+  <p>text와 com이 같은지 확인한다. 1번째 문자열이 서로 대,소문자차이가 있으므로 false</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.equalsIgnoreCase(com));
+</code></pre></div></div>
+
+<blockquote>
+  <p>text와 com이 같은지 확인한다. 1번째 문자열이 서로 대,소문자차이를 무시하므로 true</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.indexOf("a")); 
+</code></pre></div></div>
+
+<blockquote>
+  <p>a의 가장 먼저 나오는 문자열 인덱스(위치)를 추출한다. 없으면 -1을 반환한다. 7.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.trim());
+</code></pre></div></div>
+
+<blockquote>
+  <p>양쪽의 공백을 자른다.(ex. 앞에 있는 스페이스바 같은 상황)</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.length());
+</code></pre></div></div>
+
+<blockquote>
+  <p>문자열의 길이를 반환한다. 띄워쓰기도 포함한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.substring(7));
+</code></pre></div></div>
+
+<blockquote>
+  <p>.substring은 ()의 숫자 만큼 띄우고 그 이후부터 문자열을 반환한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.substring(7,11));
+</code></pre></div></div>
+
+<blockquote>
+  <p>.substring(A,B)는 A부터 (B-A)를 반환한다. 7과 11사이의 문자열을 반환한다는뜻.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.replace(" ", "-"));
+</code></pre></div></div>
+
+<blockquote>
+  <p>replace는 (A, B) A를 B로변경한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.replaceAll(" ", "-"));
+</code></pre></div></div>
+
+<blockquote>
+  <p>동일.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.toUpperCase());
+</code></pre></div></div>
+
+<blockquote>
+  <p>문자열을 대문자로 변경</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		System.out.println(text.toLowerCase());
+</code></pre></div></div>
+
+<blockquote>
+  <p>문자열을 소문자로 변환</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		String[]sp	= text.split(" "); 
+</code></pre></div></div>
+
+<blockquote>
+  <p>split(del)은 del문자를 기준으로 문자열을 잘라 배열로 반환한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		for(int i = 0; i&lt;sp.length; i++) {
+			System.out.println(i+"\t\t"+sp[i]+"\t\t"+sp[i].length());
+		}
+	}
+}
+</code></pre></div></div>
+
+<p>//결과</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>l
+Hello Java4 Androids
+true
+false
+true
+7
+9
+Hello Java4 Android
+19
+ava4 Android
+ava4
+Hello-Java4-Android
+Hello-Java4-Android
+HELLO JAVA4 ANDROID
+hello java4 android
+0		Hello		5
+1		Java4		5
+2		Android		7
+</code></pre></div></div>
 
         
       </section>
@@ -321,9 +460,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#%EC%B2%98%EC%9D%8C" class="page__taxonomy-item p-category" rel="tag">처음</a><span class="sep">, </span>
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">테스트</a>
+      <a href="/tags/#pratice" class="page__taxonomy-item p-category" rel="tag">Pratice</a>
     
     </span>
   </p>
@@ -340,7 +479,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">BLOG</a>
+      <a href="/categories/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a>
     
     </span>
   </p>
@@ -348,7 +487,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-03T00:00:00+09:00">May 3, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-21T00:00:00+09:00">May 21, 2023</time></p>
 
       </footer>
 
@@ -357,21 +496,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=BLOG+%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC+%ED%85%8C%EC%8A%A4%ED%8A%B8+%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=JAVA%2C+String%28%EB%AC%B8%EC%9E%90%EC%97%B4%29%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0.%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA030%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA030%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA030%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
+      <a href="/java/JAVA029/" class="pagination--pager" title="JAVA, String(문자열)을 이용해 도시 이름 비교하기.
+">이전</a>
     
     
-      <a href="/java/JAVA001/" class="pagination--pager" title="JAVA 카테고리 테스트
+      <a href="/java/JAVA031/" class="pagination--pager" title="JAVA, 리플렉션(Reflection)을 이용하여 클래스 정보 출력하기
 ">다음</a>
     
   </nav>

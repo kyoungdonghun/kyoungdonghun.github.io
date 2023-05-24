@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>JAVA 카테고리 테스트 - 계단을 오르는 백엔드 개발자</title>
-<meta name="description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
+<!-- begin _includes/seo.html --><title>JAVA, 리플렉션(Reflection)을 이용하여 클래스 정보 출력하기 - 계단을 오르는 백엔드 개발자</title>
+<meta name="description" content="import java.lang.reflect.Constructor; import java.lang.reflect.Method;">
 
 
   <meta name="author" content="경동훈">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="계단을 오르는 백엔드 개발자">
-<meta property="og:title" content="JAVA 카테고리 테스트">
-<meta property="og:url" content="http://localhost:4000/java/JAVA001/">
+<meta property="og:title" content="JAVA, 리플렉션(Reflection)을 이용하여 클래스 정보 출력하기">
+<meta property="og:url" content="http://localhost:4000/java/JAVA031/">
 
 
-  <meta property="og:description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-05-03T00:00:00+09:00">
+  <meta property="og:description" content="import java.lang.reflect.Constructor; import java.lang.reflect.Method;">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-05-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/java/JAVA001/">
+
+<link rel="canonical" href="http://localhost:4000/java/JAVA031/">
 
 
 
@@ -264,16 +264,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="JAVA 카테고리 테스트">
-    <meta itemprop="description" content="자바 카테고리 테스트 입니다.카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-    <meta itemprop="datePublished" content="2023-05-03T00:00:00+09:00">
+    <meta itemprop="headline" content="JAVA, 리플렉션(Reflection)을 이용하여 클래스 정보 출력하기">
+    <meta itemprop="description" content="import java.lang.reflect.Constructor;import java.lang.reflect.Method;">
+    <meta itemprop="datePublished" content="2023-05-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/java/JAVA001/" class="u-url" itemprop="url">JAVA 카테고리 테스트
+            <a href="http://localhost:4000/java/JAVA031/" class="u-url" itemprop="url">JAVA, 리플렉션(Reflection)을 이용하여 클래스 정보 출력하기
 </a>
           </h1>
           
@@ -290,7 +290,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -302,9 +302,191 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>자바 카테고리 테스트 입니다.
-카테고리는 자바, 테그는 “처음”, “테스트” 입니다.</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+</code></pre></div></div>
 
+<blockquote>
+  <p>reflect을 이용하면 클래스에 대한 생성자와 메서드 등에 대한 정보를 얻을 수 있다.</p>
+  <blockquote>
+    <p>생성자는 new예약어로 객체를 생성할 떄 한 번 호출되는 초기화용 메서드다. 생성자는 public이나 String(char[])처럼 “제한자 클래스이름 (인자)”의 형태로사용됨.</p>
+    <blockquote>
+      <p>메서드는 public int charAt(index)처럼 “제한자 리턴타입 메서드이름(인자)”의 형태를 취한다.</p>
+      <blockquote>
+        <p>“제한자(modifier)는 int타입이므로 문자열로 변환해야 보기에 편리하다. 예를 들어 1은 public 2는private이다.</p>
+        <blockquote>
+          <p>아규먼트나 리타입에서 배열은”[“로 시작하고 타입은 “[C”처럼 “[“뒤에 대문자를 붙인다. “[B”는 byte “[C”는 char[]이다.</p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class basic068 {
+	public static String toModi(int n) {
+		String s=""; 
+		
+		switch(n) { 
+</code></pre></div></div>
+
+<blockquote>
+  <p>제한자(modifier)가 정수이므로 문자열로 반환.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		case 0: s=" "break; 
+		case 1 : s="public ";break;  
+		case 2: s="private ";break;  
+		case 4: s="protected ";break;  
+		case 8: s="static ";break; 
+		case 10: s="private static ";break; 
+		case 9: 
+</code></pre></div></div>
+
+<blockquote>
+  <p>break를 만날때까지 계속 실행한다(fall trough)현상.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		case 137: s="public static ";break; 
+		case 17: s= "public final"; break;
+		case 257: s="public native ";break;  
+		case 260: s="protected native ";break;  
+		case 273: s="public final native ";break;  
+		default: s="xxxx"; break; 
+</code></pre></div></div>
+
+<blockquote>
+  <p>0이면 default(“”),1이면 public,2이면private로 변환.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>}
+			return s;  
+}
+			public static String toRe(String msg) {
+			String s=""; 
+			if(msg.indexOf("[")!=-1) { 
+</code></pre></div></div>
+
+<blockquote>
+  <p>아규먼트나 리턴타입에 “[“가 있다면 배열이다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				if(msg.contains("[C")){//"[C"는 char[]이다.
+					s=msg.substring(msg.indexOf(" ")+ 1).trim();
+					s=s.replace("[C", "char[]"); 
+}
+				else if (msg.contains("[L")) { 
+</code></pre></div></div>
+
+<blockquote>
+  <p>“[L”은 java.lang.String이다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>					s=msg.substring(msg.indexOf(" ")+1).trim();
+					s=s.replace("[L", "").replace(";", "");
+					s=s.concat("[]");
+				}
+				else if(msg.contains("[B")) {
+</code></pre></div></div>
+
+<blockquote>
+  <p>“[B”는 Byte이다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>					s=msg.substring(msg.indexOf(" ")+1).trim();
+					s=s.replace("[B", "byte[]");
+				}
+		}
+			else if(msg.indexOf(" ")!=-1) {
+				s=msg.substring(msg.indexOf(" ")+1).trim();
+				s=s.replace("[B", "byte[]");
+			}
+			else {
+				s=msg.trim();
+			}
+			return s;
+	}
+	public static void main(String[]args) {
+		Object obj1=new Object();
+		try {
+			Class classes = Class.forName("java.lang.String");
+			System.out.println("Method찾기 =--=-=-=-=-=-=");
+			Method[] mes= classes.getDeclaredMethods();
+</code></pre></div></div>
+
+<blockquote>
+  <p>모든 메서드를 얻는다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			for(Method me:mes) {
+				if(me.getModifiers()&gt;4000) {continue;}
+				System.out.printf("%s\t\t",toModi(me.getModifiers()));
+				System.out.printf("%-30s\t\t",toRe(me.getReturnType().toString()));
+				System.out.printf("%s",me.getName());
+				System.out.printf("(","");
+				Class[]aa=me.getParameterTypes();
+				for(int j =0; j&lt;aa.length; j++) {
+					System.out.printf("%s",toRe(aa[j].getName()));
+					if(j!=aa.length-1) {
+						System.out.printf(",");
+					}
+				}
+				System.out.printf(")","");
+				System.out.println();
+			}
+</code></pre></div></div>
+
+<blockquote>
+  <p>메서드의 정보를 5라인, 24라인의 메서드를 이용하여 출력한다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			System.out.printf("생성자 찾기 -=-=-=-=-=");
+			Constructor [] constructor = classes.getDeclaredConstructors(); //모든 생성자를 얻는다.
+			for(Constructor con: constructor) {
+				System.out.print(con.getName());
+				System.out.printf("(","");
+				Class []aa=con.getParameterTypes();
+				for(int j=0; j&lt;aa.length ; j++) {
+					System.out.printf("%s",toRe(aa[j].getName()));
+					if(j!=aa.length-1) {
+						System.out.print(",");
+					}
+				}
+				System.out.printf(")","");
+				System.out.println();
+			}
+</code></pre></div></div>
+
+<blockquote>
+  <p>생성자의 정보르 5라인, 24라인의메서드를 이용하여 출력.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		}
+		catch (ClassNotFoundException e) {
+		System.out.println(e);
+		}
+	}
+}
+</code></pre></div></div>
+
+<p>//결과</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Method찾기 =--=-=-=-=-=-=
+		byte[]                        		value()
+public 		boolean                       		equals(java.lang.Object)
+public 		int                           		length()
+public 		java.lang.String              		toString()
+public 		int                           		hashCode()
+public 		void                          		getChars(int,int,char[],int)
+public 		int                           		compareTo(java.lang.String)
+public 		int                           		indexOf(int)
+public 		int                           		indexOf(java.lang.String)
+static 		int                           		indexOf(byte[],byte,int,java.lang.String,int)
+public 		int                           		indexOf(java.lang.String,int)
+public 		int                           		indexOf(int,int)
+static 		void                          		checkIndex(int,int)
+public static 		java.lang.String              		valueOf(int)
+.....
+</code></pre></div></div>
 
         
       </section>
@@ -321,9 +503,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#%EC%B2%98%EC%9D%8C" class="page__taxonomy-item p-category" rel="tag">처음</a><span class="sep">, </span>
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">테스트</a>
+      <a href="/tags/#pratice" class="page__taxonomy-item p-category" rel="tag">Pratice</a>
     
     </span>
   </p>
@@ -348,7 +530,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-03T00:00:00+09:00">May 3, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-21T00:00:00+09:00">May 21, 2023</time></p>
 
       </footer>
 
@@ -357,22 +539,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=JAVA+%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC+%ED%85%8C%EC%8A%A4%ED%8A%B8%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA001%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=JAVA%2C+%EB%A6%AC%ED%94%8C%EB%A0%89%EC%85%98%28Reflection%29%EC%9D%84+%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC+%ED%81%B4%EB%9E%98%EC%8A%A4+%EC%A0%95%EB%B3%B4+%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA031%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA001%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA031%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA001%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA031%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/BLOG001/" class="pagination--pager" title="BLOG 카테고리 테스트
+      <a href="/java/JAVA030/" class="pagination--pager" title="JAVA, String(문자열)가공하기.
 ">이전</a>
     
     
-      <a href="/java/JAVA002/" class="pagination--pager" title="JAVA, 배열을 이용한 정수 출력 그리고 print,printf,println
+      <a href="/java/JAVA032/" class="pagination--pager" title="JAVA, String Buffer로 문자열 수정, 변경, 추가하기.
 ">다음</a>
     
   </nav>
@@ -526,7 +708,7 @@ import java.util.Properties;
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/java/JAVA031/" rel="permalink">JAVA, 리플렉션(Reflection)을 이용하여 클래스 정보 출력하기
+        <a href="/java/JAVA030/" rel="permalink">JAVA, String(문자열)가공하기.
 </a>
       
     </h2>
@@ -544,15 +726,20 @@ import java.util.Properties;
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+    <p class="archive__item-excerpt" itemprop="description">public static void main(String []args) {
+		String text="Hello Java4 Android";
+		String com="HEllo java4 Android";
+
+
+
+  //String은 문자열 가공을 위한 메서드를 많이 제공한다.
 
 </p>
   </article>

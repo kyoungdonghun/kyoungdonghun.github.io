@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BLOG 카테고리 테스트  - 계단을 오르는 백엔드 개발자</title>
-<meta name="description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
+<!-- begin _includes/seo.html --><title>JAVA,  홀수의 제곱값을 배열로 출력하기. - 계단을 오르는 백엔드 개발자</title>
+<meta name="description" content="public class basic058 { 	public static void main(String[]args) { 		List&lt;Integer&gt;ilist = new ArrayList&lt;&gt;();       정수를 List에 저장한다. 를 이용하여 정수로 한정. List에 저장할 수가 int타입이므로 랩퍼클래스  integer를 이용하여 List로 선언하고 생성.">
 
 
   <meta name="author" content="경동훈">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="계단을 오르는 백엔드 개발자">
-<meta property="og:title" content="BLOG 카테고리 테스트">
-<meta property="og:url" content="http://localhost:4000/blog/BLOG001/">
+<meta property="og:title" content="JAVA,  홀수의 제곱값을 배열로 출력하기.">
+<meta property="og:url" content="http://localhost:4000/java/JAVA021/">
 
 
-  <meta property="og:description" content="자바 카테고리 테스트 입니다. 카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-05-03T00:00:00+09:00">
+  <meta property="og:description" content="public class basic058 { 	public static void main(String[]args) { 		List&lt;Integer&gt;ilist = new ArrayList&lt;&gt;();       정수를 List에 저장한다. 를 이용하여 정수로 한정. List에 저장할 수가 int타입이므로 랩퍼클래스  integer를 이용하여 List로 선언하고 생성.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-05-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/blog/BLOG001/">
+
+<link rel="canonical" href="http://localhost:4000/java/JAVA021/">
 
 
 
@@ -264,16 +264,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BLOG 카테고리 테스트">
-    <meta itemprop="description" content="자바 카테고리 테스트 입니다.카테고리는 자바, 테그는 “처음”, “테스트” 입니다.">
-    <meta itemprop="datePublished" content="2023-05-03T00:00:00+09:00">
+    <meta itemprop="headline" content="JAVA,  홀수의 제곱값을 배열로 출력하기.">
+    <meta itemprop="description" content="public class basic058 {	public static void main(String[]args) {		List&lt;Integer&gt;ilist = new ArrayList&lt;&gt;();   정수를 List에 저장한다. 를 이용하여 정수로 한정. List에 저장할 수가 int타입이므로 랩퍼클래스 integer를 이용하여 List로 선언하고 생성.">
+    <meta itemprop="datePublished" content="2023-05-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/blog/BLOG001/" class="u-url" itemprop="url">BLOG 카테고리 테스트
+            <a href="http://localhost:4000/java/JAVA021/" class="u-url" itemprop="url">JAVA,  홀수의 제곱값을 배열로 출력하기.
 </a>
           </h1>
           
@@ -302,9 +302,55 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>자바 카테고리 테스트 입니다.
-카테고리는 자바, 테그는 “처음”, “테스트” 입니다.</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class basic058 {
+	public static void main(String[]args) {
+		List&lt;Integer&gt;ilist = new ArrayList&lt;&gt;(); 
+</code></pre></div></div>
 
+<blockquote>
+  <p>정수를 List에 저장한다. <integer>를 이용하여 정수로 한정. List에 저장할 수가 int타입이므로 랩퍼클래스 
+integer를 이용하여 List<Ineger>로 선언하고 생성.</Ineger></integer></p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		int s=0;
+		for(int i =1;i&lt;=10;i++) {
+</code></pre></div></div>
+
+<blockquote>
+  <p>1~10 사이의 정수를 list에 저장.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			ilist.add(i);
+		}
+		for (int m:ilist) {	
+</code></pre></div></div>
+
+<blockquote>
+  <p>저장된 것을 가져와서 홀수인지 판단하기.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			if(m%2 == 1) {
+				s+=m*m;	
+</code></pre></div></div>
+
+<blockquote>
+  <p>홀수면 제곱, s에 제곱의 합을 저장.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				System.out.printf("%d\t", m*m);
+			}
+		}
+		System.out.println();
+		System.out.println("1~10 사이의 홀수에 대한 제곱합 : "+s);
+	}
+}
+</code></pre></div></div>
+
+<p>//결과</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1	9	25	49	81	
+1~10 사이의 홀수에 대한 제곱합 : 165
+</code></pre></div></div>
 
         
       </section>
@@ -321,9 +367,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#%EC%B2%98%EC%9D%8C" class="page__taxonomy-item p-category" rel="tag">처음</a><span class="sep">, </span>
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">테스트</a>
+      <a href="/tags/#pratice" class="page__taxonomy-item p-category" rel="tag">Pratice</a>
     
     </span>
   </p>
@@ -340,7 +386,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">BLOG</a>
+      <a href="/categories/#java" class="page__taxonomy-item p-category" rel="tag">JAVA</a>
     
     </span>
   </p>
@@ -348,7 +394,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-03T00:00:00+09:00">May 3, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-21T00:00:00+09:00">May 21, 2023</time></p>
 
       </footer>
 
@@ -357,21 +403,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=BLOG+%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC+%ED%85%8C%EC%8A%A4%ED%8A%B8+%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=JAVA%2C++%ED%99%80%EC%88%98%EC%9D%98+%EC%A0%9C%EA%B3%B1%EA%B0%92%EC%9D%84+%EB%B0%B0%EC%97%B4%EB%A1%9C+%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA021%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA021%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBLOG001%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJAVA021%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
+      <a href="/java/JAVA020/" class="pagination--pager" title="JAVA,  자바의 유틸, forEach 사용하여 배열 출력하기.
+">이전</a>
     
     
-      <a href="/java/JAVA001/" class="pagination--pager" title="JAVA 카테고리 테스트
+      <a href="/java/JAVA022/" class="pagination--pager" title="JAVA, 람다를 이용하여 1~100 사이의 숫자들의 조건 합 구하기.
 ">다음</a>
     
   </nav>
